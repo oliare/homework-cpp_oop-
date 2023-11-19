@@ -1,0 +1,11 @@
+* Square
+coordinates - (5, 3)	side - 13
+
+* Rectangle
+coordinates - (7, 2)	width - 12  height - 3
+
+* Circle
+center - (16, 16)	radius - 7
+
+* Ellipse
+coordinates - (5, 6)	width - 9  height - 10
