@@ -6,7 +6,9 @@ using namespace std;
 class Shape
 {
 public:
-	virtual void Show() = 0;
+	 virtual void Show() {
+		cout << "base ";
+	}
 	virtual void Save() = 0;
 	virtual void Load() = 0;
 };
@@ -18,9 +20,10 @@ public:
 	Square(const double x, const double y, const double sideLen)
 		:x{ x }, y{ y }, sideLen{ sideLen }
 	{}
-	void Show() override {
+	/*void Show() 
+	{
 		cout << "\n\t * Square Data *" << "\ncoordinates - (" << x << ", " << y << ")\tside - " << sideLen << endl;
-	}
+	}*/
 	void Save() override {
 		ofstream file("data.txt", ios::ate);
 		file << "* Square" << "\ncoordinates - (" << x << ", " << y << ")\tside - " << sideLen << endl;
@@ -44,7 +47,7 @@ class Rectangle : public Shape
 public:
 	Rectangle(const double x, const double y, const double w, const double h)
 		: x{ x }, y{ y }, width{ w }, height{ h } {}
-	void Show() override {
+	void Show()  {
 		cout << "\n\n\t * Rectangle Data *" << "\ncoordinates - (" << x << ", " << y << ")\twidth - " << width << "  height - " << height << endl;
 	}
 	void Save() override {
@@ -70,7 +73,7 @@ class Circle : public Shape
 public:
 	Circle(const double x, const double y, const double r)
 		: x{ x }, y{ y }, radius{ r } {}
-	void Show() override {
+	void Show()  {
 		cout << "\n\n\t * Circle Data  *" << "\ncenter - (" << x << ", " << y << ")\tradius - " << radius << endl;
 	}
 	void Save() override {
@@ -97,7 +100,7 @@ public:
 	Ellipse(const double x, const double y, const double w, const double h)
 		: x{ x }, y{ y }, w{ w }, h{ h }
 	{}
-	void Show() override {
+	void Show()  {
 		cout << "\n\n\t * Ellipse Data *" << "\ncoordinates - (" << x << ", " << y << ")\twidth - " << w << "  height - " << h << endl << endl;
 	}
 	void Save() override {
@@ -121,28 +124,34 @@ public:
 int main()
 {
 
-	vector<Shape*> shapes;
+	/*vector<Shape*> shapes;
 	shapes.push_back(new Square(5, 3, 13));
 	shapes.push_back(new Rectangle(7, 2, 12, 3));
 	shapes.push_back(new Circle(16, 16, 7));
-	shapes.push_back(new Ellipse(5, 6, 9, 10));
+	shapes.push_back(new Ellipse(5, 6, 9, 10));*/
 
 
-	for (Shape* item : shapes)
-	{
-		item->Save();
-	}
-	for (Shape* item : shapes)
-	{
-		item->Load();
-	}
-	for (Shape* item : shapes)
-	{
-		item->Show();
-	}
-	for (Shape* item : shapes) {
-		delete item;
-	}
-	shapes.clear();
+	//for (Shape* item : shapes)
+	//{
+	//	item->Save();
+	//}
+	//for (Shape* item : shapes)
+	//{
+	//	item->Load();
+	//}
+	//for (Shape* item : shapes)
+	//{
+	//	item->Show();
+	//}
+	//for (Shape* item : shapes) {
+	//	delete item;
+	//}
+	//shapes.clear();
+
+	Shape* s = new Square(2, 5, 6) ;
+	s->Show();
+
+	//Rectangle r(2 ,5, 8 ,2);
+
 
 }
