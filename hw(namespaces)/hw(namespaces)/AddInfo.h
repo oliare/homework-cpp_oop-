@@ -1,12 +1,12 @@
 #pragma once
-#include "Passport.h" 
+#include "Passport.h"
+#include <iostream>
 
 namespace AddInfo {
-    class ForeignPassport : public PassportNamespace::Passport { 
+    class ForeignPassport : public PassportNamespace::Passport {
     public:
         ForeignPassport();
         void print();
-        void input();
 
     protected:
         string visitReason;

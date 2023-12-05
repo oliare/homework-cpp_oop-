@@ -17,7 +17,7 @@ namespace PassportNamespace
         int day, month, year;
     };
 
-    class Passport {
+    class Passport {    
     private:
         string fullName;
         Sex s;
